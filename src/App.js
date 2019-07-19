@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from  "axios";
+import ImgData from "./Components/ImgData.js";
 import Date from "./Components/Date.js";
-import Img from "./Components/Img.js";
-import Explanation from "./Components/Img.js";
-import Title from "./Components/Title.js";
+import Explanation from "./Components/Explanation";
+import TitleOfImg from "./Components/TitleOfImg.js";
+
+
 
 import "./App.css";
 
@@ -16,16 +18,20 @@ function App() {
       setNasaData(dataResults);
       console.log(dataResults);
     })
+    .catch(error => {
+      console.log("erver is down! Sorry :(", error);
+    })
   }, [])
 
   return (
     <div className="App">
-      <p>{ nasaData.date }</p>
-      <h2>{ nasaData.title }</h2>
+      <Date date={ nasaData.date} />
       <div className="ImpPic">
-        <img src={ nasaData.url }></img>
+        <TitleOfImg title={nasaData.title} />
+        {/* <img src={ nasaData.url }></img> */}
+        <ImgData pics={nasaData.url}/>
       </div>
-      <p>{ nasaData.explanation }</p>
+      <Explanation explanation={nasaData.explanation} />
     </div>
   );
 };

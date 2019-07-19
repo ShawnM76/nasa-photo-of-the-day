@@ -4,7 +4,7 @@ const Explanation = props => {
 
     return (
         <p>
-            {props.nasaData.explanation}
+            {props.explanation}
         </p>
     )
 }

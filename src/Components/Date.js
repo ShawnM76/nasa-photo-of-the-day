@@ -4,7 +4,7 @@ const DateData = props => {
     
     return (
         <h1>
-            {props.nasaData.date}
+            {props.date}
         </h1>
     );
 }

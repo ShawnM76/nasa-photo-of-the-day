@@ -3,7 +3,7 @@ import React from "react";
 const TitleOfImg = props => {
 
     return (
-        <h2>{props.nasaData.title}</h2>
+        <h2>{props.title}</h2>
     )
 };
 
